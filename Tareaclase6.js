@@ -29,6 +29,19 @@ document.querySelector('#siguiente-paso').onclick = function(event){
     event.preventDefault()
 }
 
+function validarCantidadIntegrantes(integrantes){
+    if(!/^[0-9]+$/.test(integrantes)){
+        return 'Debe ingresar una cantidad de integrantes entera'
+    }
+    if(integrantes <= 0){
+        return 'Debe ingresar una cantidad de integrantes mayor a 0'
+    }
+    if(integrantes > 20){
+        return'Debe ingresar una cantidad de integrantes menor que 20'
+    }
+    return ''
+}
+
 function crearIntegrante(){
 
     const $div = document.createElement('div')
