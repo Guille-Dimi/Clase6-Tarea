@@ -42,6 +42,19 @@ function validarCantidadIntegrantes(integrantes){
     return ''
 }
 
+function validarEdades(edad){
+    if(!/^[0-9]+$/.test(edad)){
+        return 'Debe ingresar una edad entera'
+    }
+    if(edad > 110){
+        return 'Debe ingresar una edad menor a 110'
+    }
+    if(edad >= 0){
+        return 'Debe ingresar una edad mayor a 0'
+    }
+    return ''
+}
+
 function crearIntegrante(){
 
     const $div = document.createElement('div')
