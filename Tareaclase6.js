@@ -38,3 +38,12 @@ function crearInteraccionesIntegrante(interacciones){
     }
 }
 
+function obtenerEdades(){
+    const $edades = document.querySelectorAll('.edades')
+    const edades = []
+    for(let i = 0; i < $edades.length; i++){
+        edades.push(Number($edades[i].value))
+    }
+    return edades
+}
+
