@@ -105,4 +105,16 @@ function ocultarBotonCalculo(){
     document.querySelector('#calcular').className = 'oculto'
 }
 
+function borrarIntegrantes(){
+    const $integrantes = document.querySelectorAll('.integrante')
+    for(let i = 0; i < $integrantes.length; i++){
+        $integrantes[i].remove()
+    }
+}
+
+function borrarEdades(){
+    document.querySelector('#mayor-edad').innerText = 'La edad mayor es: '
+    document.querySelector('#menor-edad').innerText = 'La menor edad es: '
+    document.querySelector('#promedio-edad'). innerText = 'El promedio de edad es: '
+}
 
