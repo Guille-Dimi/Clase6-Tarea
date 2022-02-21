@@ -49,7 +49,7 @@ function validarEdades(edad){
     if(edad > 110){
         return 'Debe ingresar una edad menor a 110'
     }
-    if(edad >= 0){
+    if(edad <= 0){
         return 'Debe ingresar una edad mayor a 0'
     }
     return ''
