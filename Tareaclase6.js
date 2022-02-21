@@ -15,4 +15,19 @@ Al hacer click en "calcular", mostrar en un elemento pre-existente el mayor sala
 Punto bonus: si hay inputs vacíos, ignorarlos en el cálculo (no contarlos como 0).
 */
 
+function crearIntegrante(){
 
+    const $div = document.createElement('div')
+    $div.className = 'integrante'
+    document.querySelector('#integrantes').appendChild($div)
+
+    const $label = document.createElement('label')
+    $label.textContent = 'Edad del integrante: '
+    $div.appendChild($label)
+
+    const $input = document.createElement('input')
+    $input.type = 'number'
+    $input.className = 'edades'
+    $div.appendChild($input)
+
+}
