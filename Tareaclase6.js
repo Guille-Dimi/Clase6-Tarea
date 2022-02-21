@@ -118,3 +118,12 @@ function borrarEdades(){
     document.querySelector('#promedio-edad'). innerText = 'El promedio de edad es: '
 }
 
+document.querySelector('#calcular').onclick = function(event){
+    mostrarResultados()
+    document.querySelector('#mayor-edad').innerText += calcularNumMayor(obtenerEdades())
+    document.querySelector('#menor-edad').innerText += calcularNumMenor(obtenerEdades())
+    document.querySelector('#promedio-edad'). innerText += calcularPromedio(obtenerEdades())
+
+    event.preventDefault()
+}
+
