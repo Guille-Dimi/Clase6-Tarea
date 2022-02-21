@@ -57,4 +57,13 @@ function calcularNumMayor(array){
     return numMayor
 }
 
+function calcularNumMenor(array){
+    let numMenor = array[0]
+    for(let i = 0; i < array.length; i++){
+        if(array[i] < numMenor){
+            numMenor = array[i]
+        }
+    }
+    return numMenor
+}
 
