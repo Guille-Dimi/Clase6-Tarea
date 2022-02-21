@@ -18,7 +18,7 @@ Punto bonus: si hay inputs vacíos, ignorarlos en el cálculo (no contarlos como
 document.querySelector('#siguiente-paso').onclick = function(event){
     const $cantidadIntegrantes = Number(document.querySelector('#cantidad-integrantes').value)
     borrarIntegrantes()
-    if($cantidadIntegrantes > 0){
+    if(!validarCantidadIntegrantes($cantidadIntegrantes)){
         crearInteraccionesIntegrante($cantidadIntegrantes)
         mostrarBotonCalculo()
     }
@@ -148,7 +148,7 @@ document.querySelector('#calcular').onclick = function(event){
     mostrarResultados()
     document.querySelector('#mayor-edad').innerText += calcularNumMayor(obtenerEdades())
     document.querySelector('#menor-edad').innerText += calcularNumMenor(obtenerEdades())
-    document.querySelector('#promedio-edad'). innerText += calcularPromedio(obtenerEdades())
+    document.querySelector('#promedio-edad').innerText += calcularPromedio(obtenerEdades())
 
     event.preventDefault()
 }
