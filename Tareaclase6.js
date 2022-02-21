@@ -47,3 +47,14 @@ function obtenerEdades(){
     return edades
 }
 
+function calcularNumMayor(array){
+    let numMayor = array[0]
+    for(let i = 0; i < array.length; i++){
+        if(array[i] > numMayor){
+            numMayor = array[i]
+        }
+    }
+    return numMayor
+}
+
+
