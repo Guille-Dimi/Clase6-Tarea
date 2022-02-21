@@ -67,3 +67,11 @@ function calcularNumMenor(array){
     return numMenor
 }
 
+function calcularPromedio(array){
+    let sumaNum = 0
+    for(let i = 0; i < array.length; i++){
+        sumaNum += array[i]
+    }
+    return (sumaNum / array.length).toFixed(2)
+}
+
