@@ -127,3 +127,11 @@ document.querySelector('#calcular').onclick = function(event){
     event.preventDefault()
 }
 
+function resetear(){
+    ocultarResultados()
+    ocultarBotonCalculo()
+    borrarIntegrantes()
+    borrarEdades()
+}
+
+document.querySelector('#resetear').onclick = resetear
