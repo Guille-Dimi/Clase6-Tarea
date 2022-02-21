@@ -16,22 +16,31 @@ Punto bonus: si hay inputs vacíos, ignorarlos en el cálculo (no contarlos como
 */
 
 document.querySelector('#siguiente-paso').onclick = function(event){
-    const $cantidadIntegrantes = Number(document.querySelector('#cantidad-integrantes').value)
+    const $cantidadIntegrantes = document.querySelector('#cantidad-integrantes')
     borrarIntegrantes()
-    if(!validarCantidadIntegrantes($cantidadIntegrantes)){
-        crearInteraccionesIntegrante($cantidadIntegrantes)
+    if(!validarCantidadIntegrantes(Number($cantidadIntegrantes.value))){
+        crearInteraccionesIntegrante(Number($cantidadIntegrantes.value))
         mostrarBotonCalculo()
+        $cantidadIntegrantes.className = ''
     }
     else{
-        ocultarBotonCalculo()
+        mostrarError(validarCantidadIntegrantes(Number($cantidadIntegrantes.value)))
+        $cantidadIntegrantes.className = 'error'
     }
     
     event.preventDefault()
 }
 
+function mostrarError(error){
+    const $textoError = document.createElement('li')
+    $textoError.className = 'texto-error'
+    $textoError.innerText = error
+    document.querySelector('#errores').appendChild($textoError)
+}
+
 function validarCantidadIntegrantes(integrantes){
     if(!/^[0-9]+$/.test(integrantes)){
-        return 'Debe ingresar una cantidad de integrantes entera'
+        return 'Debe ingresar una cantidad de solo numeros'
     }
     if(integrantes <= 0){
         return 'Debe ingresar una cantidad de integrantes mayor a 0'
