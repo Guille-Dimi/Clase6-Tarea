@@ -18,6 +18,7 @@ Punto bonus: si hay inputs vacíos, ignorarlos en el cálculo (no contarlos como
 document.querySelector('#siguiente-paso').onclick = function(event){
     const $cantidadIntegrantes = document.querySelector('#cantidad-integrantes')
     borrarIntegrantes()
+    borrarCampoErrores()
     if(!validarCantidadIntegrantes(Number($cantidadIntegrantes.value))){
         crearInteraccionesIntegrante(Number($cantidadIntegrantes.value))
         mostrarBotonCalculo()
@@ -36,6 +37,13 @@ function mostrarError(error){
     $textoError.className = 'texto-error'
     $textoError.innerText = error
     document.querySelector('#errores').appendChild($textoError)
+}
+
+function borrarCampoErrores(){
+    const $errores = document.querySelectorAll('.texto-error')
+    for(let i = 0; i < $errores.length; i++){
+        $errores[i].remove()
+    }
 }
 
 function validarCantidadIntegrantes(integrantes){
@@ -163,6 +171,7 @@ document.querySelector('#calcular').onclick = function(event){
 }
 
 function resetear(){
+    borrarCampoErrores()
     ocultarResultados()
     ocultarBotonCalculo()
     borrarIntegrantes()
