@@ -75,3 +75,19 @@ function calcularPromedio(array){
     return (sumaNum / array.length).toFixed(2)
 }
 
+function mostrarResultados(){
+    document.querySelector('#analisis').className = ''
+}
+
+function mostrarBotonCalculo(){
+    document.querySelector('#calcular').className = ''
+}
+
+function ocultarResultados(){
+    document.querySelector('#analisis').className = 'oculto'
+}
+
+function ocultarBotonCalculo(){
+    document.querySelector('#calcular').className = 'oculto'
+}
+
