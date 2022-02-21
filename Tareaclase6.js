@@ -15,6 +15,20 @@ Al hacer click en "calcular", mostrar en un elemento pre-existente el mayor sala
 Punto bonus: si hay inputs vacíos, ignorarlos en el cálculo (no contarlos como 0).
 */
 
+document.querySelector('#siguiente-paso').onclick = function(event){
+    const $cantidadIntegrantes = Number(document.querySelector('#cantidad-integrantes').value)
+    borrarIntegrantes()
+    if($cantidadIntegrantes > 0){
+        crearInteraccionesIntegrante($cantidadIntegrantes)
+        mostrarBotonCalculo()
+    }
+    else{
+        ocultarBotonCalculo()
+    }
+    
+    event.preventDefault()
+}
+
 function crearIntegrante(){
 
     const $div = document.createElement('div')
@@ -90,4 +104,5 @@ function ocultarResultados(){
 function ocultarBotonCalculo(){
     document.querySelector('#calcular').className = 'oculto'
 }
+
 
