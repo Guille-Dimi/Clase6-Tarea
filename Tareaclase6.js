@@ -31,3 +31,10 @@ function crearIntegrante(){
     $div.appendChild($input)
 
 }
+
+function crearInteraccionesIntegrante(interacciones){
+    for(let i = 0; i < interacciones; i++){
+        crearIntegrante()
+    }
+}
+
