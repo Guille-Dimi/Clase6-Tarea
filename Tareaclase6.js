@@ -186,6 +186,7 @@ document.querySelector('#calcular').onclick = function(event){
     else{
         for(let error of arrayErrores){
             mostrarError(error)
+            ocultarResultados()
         }
     }
 
