@@ -175,7 +175,8 @@ function borrarEdades(){
 document.querySelector('#calcular').onclick = function(event){
     const arrayErrores = creariInteracionValidarEdades(obtenerEdades())
     borrarCampoErrores()
-    
+    borrarEdades()
+
     if(!arrayErrores.length){
         mostrarResultados()
         document.querySelector('#mayor-edad').innerText += calcularNumMayor(obtenerEdades())
