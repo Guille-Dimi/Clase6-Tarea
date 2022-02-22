@@ -5,3 +5,7 @@
 form{
     text-align: center;
 }
+
+.error {
+    border: 2px solid red;
+}
