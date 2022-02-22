@@ -62,7 +62,7 @@ function validarCantidadIntegrantes(integrantes){
 
 function validarEdades(edad){
     if(!/^[0-9]+$/.test(edad)){
-        return 'Debe ingresar una edad entera'
+        return 'Debe ingresar una edad de solo numeros'
     }
     if(edad > 110){
         return 'Debe ingresar una edad menor a 110'
