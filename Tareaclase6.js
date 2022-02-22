@@ -17,15 +17,16 @@ Punto bonus: si hay inputs vacíos, ignorarlos en el cálculo (no contarlos como
 
 document.querySelector('#siguiente-paso').onclick = function(event){
     const $cantidadIntegrantes = document.querySelector('#cantidad-integrantes')
+    const numeroIntegrantes =  Number($cantidadIntegrantes.value)
     borrarIntegrantes()
     borrarCampoErrores()
-    if(!validarCantidadIntegrantes(Number($cantidadIntegrantes.value))){
-        crearInteraccionesIntegrante(Number($cantidadIntegrantes.value))
+    if(!validarCantidadIntegrantes(numeroIntegrantes)){
+        crearInteraccionesIntegrante(numeroIntegrantes)
         mostrarBotonCalculo()
         $cantidadIntegrantes.className = ''
     }
     else{
-        mostrarError(validarCantidadIntegrantes(Number($cantidadIntegrantes.value)))
+        mostrarError(validarCantidadIntegrantes(numeroIntegrantes))
         $cantidadIntegrantes.className = 'error'
     }
     
@@ -70,6 +71,16 @@ function validarEdades(edad){
         return 'Debe ingresar una edad mayor a 0'
     }
     return ''
+}
+
+function creariInteracionValidarEdades(array){
+    let arrayErrores = []
+    for(let i = 0; i < array.length; i++){
+        if(validarEdades(array[i])){
+            arrayErrores.push(validarEdades(array[i]))
+        }
+    }
+    return arrayErrores
 }
 
 function crearIntegrante(){
@@ -162,10 +173,20 @@ function borrarEdades(){
 }
 
 document.querySelector('#calcular').onclick = function(event){
-    mostrarResultados()
-    document.querySelector('#mayor-edad').innerText += calcularNumMayor(obtenerEdades())
-    document.querySelector('#menor-edad').innerText += calcularNumMenor(obtenerEdades())
-    document.querySelector('#promedio-edad').innerText += calcularPromedio(obtenerEdades())
+    const arrayErrores = creariInteracionValidarEdades(obtenerEdades())
+    borrarCampoErrores()
+    
+    if(!arrayErrores.length){
+        mostrarResultados()
+        document.querySelector('#mayor-edad').innerText += calcularNumMayor(obtenerEdades())
+        document.querySelector('#menor-edad').innerText += calcularNumMenor(obtenerEdades())
+        document.querySelector('#promedio-edad').innerText += calcularPromedio(obtenerEdades())
+    }
+    else{
+        for(let error of arrayErrores){
+            mostrarError(error)
+        }
+    }
 
     event.preventDefault()
 }
