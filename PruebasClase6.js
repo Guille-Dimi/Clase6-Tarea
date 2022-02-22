@@ -14,3 +14,19 @@ function probarValidarCantidadIntegrantes(){
 }
 probarValidarCantidadIntegrantes()
 
+function probarValidarEdades(){
+    console.assert(
+        validarEdades(',er') === 'Debe ingresar una edad de solo numeros',
+        'Validar edades no validó que la cantidad de integrantes sea de solo numeros'
+    )
+    console.assert(
+        validarEdades(111) === 'Debe ingresar una edad menor a 110',
+        'Validar edades no validó que la cantidad de integrantes sea menor a 110'
+    )
+    console.assert(
+        validarEdades(0) === 'Debe ingresar una edad mayor a 0',
+        'Validar edades no validó que la cantidad de integrantes sea mayor a 0'
+    )
+}
+probarValidarEdades()
+
