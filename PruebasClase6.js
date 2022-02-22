@@ -11,6 +11,10 @@ function probarValidarCantidadIntegrantes(){
         validarCantidadIntegrantes(21) === 'Debe ingresar una cantidad de integrantes menor que 20',
         'Validar cantidad integrantes no validó que la cantidad de integrantes sea menor a 20'
     )
+    console.assert(
+        validarCantidadIntegrantes(4) === '',
+        'Validar cantidad integrantes no validó correctamente una cantidad de integrantes valida'
+    )
 }
 probarValidarCantidadIntegrantes()
 
@@ -26,6 +30,10 @@ function probarValidarEdades(){
     console.assert(
         validarEdades(0) === 'Debe ingresar una edad mayor a 0',
         'Validar edades no validó que la cantidad de integrantes sea mayor a 0'
+    )
+    console.assert(
+        validarEdades(25) === '',
+        'Validar edades no validó correctamente una edad valida'
     )
 }
 probarValidarEdades()
