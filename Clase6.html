@@ -4,6 +4,7 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Tarea de la clase 6</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='Clase6.css'>
 </head>
@@ -12,7 +13,8 @@
     <form id="calculador-integrante">
 
         <input type="number" placeholder="Ingresá la cantidad de familiares" id="cantidad-integrantes"/>
-        <button type="submit" id="siguiente-paso">Siguiente</button>
+        <button type="button" class="btn btn-primary" id="siguiente-paso">Siguiente</button>
+        <button type="reset" class="btn btn-success" id="resetear">Resetear</button>
 
         <div id="integrantes">
 
@@ -22,9 +24,7 @@
         </ul>
 
         <button type="button" id="calcular" class="oculto">Calcular</button>
-
-        <button type="reset" id="resetear">Resetear</button>
-
+        
         <div id="analisis" class="oculto">
             <p id="mayor-edad">La edad mayor es: </p>
             <p id="menor-edad">La menor edad es: </p>
