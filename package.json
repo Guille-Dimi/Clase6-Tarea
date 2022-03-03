@@ -1,0 +1,23 @@
+{
+  "name": "npmi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "PruebasClase6.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guille-Dimi/Clase6-Tarea.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Guille-Dimi/Clase6-Tarea/issues"
+  },
+  "homepage": "https://github.com/Guille-Dimi/Clase6-Tarea#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "jquery": "^3.6.0"
+  }
+}
